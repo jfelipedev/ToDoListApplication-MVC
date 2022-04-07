@@ -5,4 +5,3 @@
 * JavaScript
 * NodeJS (MVC)
 * ExpressJS (framework)
-* 
