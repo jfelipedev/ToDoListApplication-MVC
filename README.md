@@ -1,7 +1,7 @@
-#Technologies:
+# Technologies:
 
-HTML
-CSS
-JavaScript
-NodeJS (MVC)
-ExpressJS (framework)
+*HTML
+*CSS
+*JavaScript
+*NodeJS (MVC)
+*ExpressJS (framework)
