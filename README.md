@@ -5,7 +5,7 @@
 * JavaScript
 * NodeJS (MVC)
 * Nodemon
-* Mongoose
+* Mongoose (library)
 * ExpressJS (framework)
 * MongoDB
 * EJS
