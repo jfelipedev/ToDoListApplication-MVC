@@ -12,6 +12,12 @@
     <title>To Do List</title>
   </head>
   <body>
+    <%if(message != ''){%>
+    <section class="message message-<%= type%>">
+      <p><%= message%></p>
+      <span id="close-message"><i class="bi bi-x"></i></span>
+    </section>
+    <%}%>
     <header>
       <% if(task == null){ %>
       <h1>TO DO LIST</h1>
@@ -59,17 +65,19 @@
     <% if(taskDelete != null) {%>
     <section id="modal">
       <div id="card">
-        <div id="head">          
+        <div id="head">
           <h2>Confirmation</h2>
-          <a id="close" href="/"><i class="bi bi-x"></i>
-          </a>
+          <a id="close" href="/"><i class="bi bi-x"></i> </a>
         </div>
         <hr />
-        <p>Do you like to delete this task: <strong><%= taskDelete.task%>?</strong></p>
+        <p>
+          Do you like to delete this task:
+          <strong><%= taskDelete.task%>?</strong>
+        </p>
         <div id="btns">
-        <a id="cancelBTN" href="/">Cancel</a>
-        <a id="confirmBTN"href="/deleteOne/<%= taskDelete._id%>">Confirm</a>
-      </div>
+          <a id="cancelBTN" href="/">Cancel</a>
+          <a id="confirmBTN" href="/deleteOne/<%= taskDelete._id%>">Confirm</a>
+        </div>
       </div>
     </section>
     <%}%>

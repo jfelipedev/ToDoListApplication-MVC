@@ -202,7 +202,6 @@ div#btns a {
   font-size: 1.2rem;
 }
 
-
 div#btns a#cancelBTN {
   color: #ff0000;
   border: solid 1px #ff0000;
@@ -210,8 +209,8 @@ div#btns a#cancelBTN {
   transition: all 0.3s ease-in-out;
 }
 
-div#btns a#cancelBTN:hover{
-  background-color:#ff0000;
+div#btns a#cancelBTN:hover {
+  background-color: #ff0000;
   color: white;
 }
 
@@ -221,7 +220,42 @@ div#btns a#confirmBTN {
   transition: all 0.3s ease-in-out;
 }
 
-div#btns a#confirmBTN:hover{
-  background-color:#00aa2a;
+div#btns a#confirmBTN:hover {
+  background-color: #00aa2a;
   color: white;
+}
+
+.message {
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.message-danger {
+  background-color: rgb(255, 197, 197);
+  color: #8a0000;
+}
+
+.message-success {
+  background-color: rgb(197, 255, 214);
+  color: #008a1e;
+}
+
+span#close-message {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  padding-left: 2rem;
+}
+
+span#close-message:hover {
+  color: rgb(255, 0, 0);
 }
