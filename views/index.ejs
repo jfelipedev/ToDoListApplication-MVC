@@ -20,23 +20,12 @@
     <%}%>
     <header>
       <% if(task == null){ %>
-      <h1>TO DO LIST</h1>
-      <form action="/create" method="post">
-        <input
-          type="text"
-          name="task"
-          id="task"
-          placeholder="Enter a new task"
-        />
-        <button type="submit" id="addButton">Add Task</button>
-      </form>
+        <%- include('./components/form', {titleForm: "TO DO LIST", action:"create", value: "", idBTN: "addButton", nameBTN: "Add Task" })%>
 
       <% } else { %>
-      <h1>TO DO LIST - EDIT</h1>
-      <form action="/updateOne/<%= task._id %>" method="post">
-        <input type="text" name="task" id="task" value=" <%= task.task %>" />
-        <button type="submit" id="updateButton">Update</button>
-      </form>
+
+        <%- include('./components/form', {titleForm: "TO DO LIST - EDIT", action:`updateOne/${task._id}`, value: task.task, idBTN: "updateButton", nameBTN: "Update" })%>
+
       <% } %>
     </header>
 
@@ -45,7 +34,9 @@
         <% tasksList.forEach((task)=>{ %>
         <li class="check-<%= task.check%>">
           <div>
-            <a href="/check/<%= task._id%>" class="check-<%= task.check%>"><%= task.task %> </a>
+            <a href="/check/<%= task._id%>" class="check-<%= task.check%>"
+              ><%= task.task %>
+            </a>
             <span>Criado em: <%= task.date.toLocaleDateString ('pt-BR')%></span>
           </div>
           <div>
@@ -62,25 +53,8 @@
       </ul>
     </section>
 
-    <% if(taskDelete != null) {%>
-    <section id="modal">
-      <div id="card">
-        <div id="head">
-          <h2>Confirmation</h2>
-          <a id="close" href="/"><i class="bi bi-x"></i> </a>
-        </div>
-        <hr />
-        <p>
-          Do you like to delete this task:
-          <strong><%= taskDelete.task%>?</strong>
-        </p>
-        <div id="btns">
-          <a id="cancelBTN" href="/">Cancel</a>
-          <a id="confirmBTN" href="/deleteOne/<%= taskDelete._id%>">Confirm</a>
-        </div>
-      </div>
-    </section>
-    <%}%>
+    <% if(taskDelete != null) {%> <%- include('./components/modalDel', {task:
+    taskDelete}) %> <%}%>
     <script src="script.js"></script>
   </body>
 </html>
