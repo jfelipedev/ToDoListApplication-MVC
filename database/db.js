@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const connectDB = () => {
   mongoose.connect(
-    "mongodb+srv://admin:admin@cluster0.ifbro.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    process.env.DB_URI,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
