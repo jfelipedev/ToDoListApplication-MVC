@@ -16,7 +16,6 @@ The To Do List App is an application developed to train web development skills. 
 * CSS
 * JavaScript
 * NodeJS (MVC)
-* Nodemon
 * Mongoose (library)
 * ExpressJS (framework)
 * MongoDB
